@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.apap</groupId>
-	<artifactId>tugas1apap</artifactId>
+	<artifactId>tugas1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>tugas1apap</name>
-	<description>tugas1apap</description>
+	<name>tugas1</name>
+	<description>tugas1</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

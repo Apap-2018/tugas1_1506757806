@@ -1,4 +1,4 @@
-package com.apap.tugas1apap.model;
+package com.apap.tugas1.model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -28,15 +28,24 @@ public class InstansiModel implements Serializable {
 	@Column(name="deskripsi", nullable = false)
 	private String deskripsi;
 	
-	@ManyToOne(fetch = FetchType.LAZY)
-	//@JoinColumn(name = "provinsi", referencedColumnName = "id", nullable = "false")
+	@OneToMany(mappedBy = "instansi", fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	private List<PegawaiModel> listPegawaiInstansi;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name = "id_provinsi", referencedColumnName = "id", nullable = false)
+	@OnDelete(action= OnDeleteAction.NO_ACTION)
+	@JsonIgnore
+	private ProvinsiModel provinsi;	
+	
+/*	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "provinsi", referencedColumnName = "id", nullable = "false")
 	@Size(max = 20)
 	@OnDelete(action = OnDeleteAction.NO_ACTION)
 	@JsonIgnore
-	private ProvinsiModel provinsi;
+	private ProvinsiModel provinsi;*/
 	
-	@OneToMany(mappedBy = "instansi",fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-
+/*	@OneToMany(mappedBy = "instansi",fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+*/
 	public ProvinsiModel getProvinsi() {
 		return provinsi;
 	}
@@ -68,5 +77,25 @@ public class InstansiModel implements Serializable {
 	public void setDeskripsi_jabatan(String deskripsi_jabatan) {
 		//this.deskripsi_jabatan = deskripsi_jabatan;
 	}
+	
+	
+	public String getDeskripsi() {
+		return deskripsi;
+	}
+
+	public void setDeskripsi(String deskripsi) {
+		this.deskripsi = deskripsi;
+	}
+
+	public List<PegawaiModel> getListPegawaiInstansi() {
+		return listPegawaiInstansi;
+	}
+
+	public void setListPegawaiInstansi(List<PegawaiModel> listPegawaiInstansi) {
+		this.listPegawaiInstansi = listPegawaiInstansi;
+	}
+
+	
+	
 	
 }

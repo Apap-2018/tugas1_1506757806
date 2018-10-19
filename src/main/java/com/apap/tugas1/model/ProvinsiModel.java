@@ -1,4 +1,4 @@
-package com.apap.tugas1apap.model;
+package com.apap.tugas1.model;
 
 
 import java.io.Serializable;

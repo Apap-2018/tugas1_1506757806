@@ -1,4 +1,4 @@
-package com.apap.tugas1apap.model;
+package com.apap.tugas1.model;
 
 import java.io.Serializable;
 import java.sql.Date;
@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
 @Table(name = "pegawai")
 public class PegawaiModel implements Serializable {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -43,11 +44,69 @@ public class PegawaiModel implements Serializable {
     private String tahunMasuk;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "instansi_id", referencedColumnName = "id", nullable = false)
+	@JoinColumn(name = "id_instansi", referencedColumnName = "id", nullable = false)
 	@OnDelete(action = OnDeleteAction.NO_ACTION)
 	@JsonIgnore
 	private InstansiModel instansi;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public String getNip() {
+		return nip;
+	}
+
+	public void setNip(String nip) {
+		this.nip = nip;
+	}
+
+	public String getNama() {
+		return nama;
+	}
+
+	public void setNama(String nama) {
+		this.nama = nama;
+	}
+
+	public String getTempatLahir() {
+		return tempatLahir;
+	}
+
+	public void setTempatLahir(String tempatLahir) {
+		this.tempatLahir = tempatLahir;
+	}
+
+	public Date getTanggalLahir() {
+		return tanggalLahir;
+	}
+
+	public void setTanggalLahir(Date tanggalLahir) {
+		this.tanggalLahir = tanggalLahir;
+	}
+
+	public String getTahunMasuk() {
+		return tahunMasuk;
+	}
+
+	public void setTahunMasuk(String tahunMasuk) {
+		this.tahunMasuk = tahunMasuk;
+	}
+
+	public InstansiModel getInstansi() {
+		return instansi;
+	}
+
+	public void setInstansi(InstansiModel instansi) {
+		this.instansi = instansi;
+	}
 	
 	/*setter getter */
+	
+	
 
 }

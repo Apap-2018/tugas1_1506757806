@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	
+	<title>Data Pegawai</title>
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	
+	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+
+</head>
+
+<body>
+
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+
+		<br>
+		<div class="container-fluid">
+	
+				<div class="row">
+				<div class="col-md-6">
+					<div class="card">
+					    <div class="card-header text-white" style="background-color: #00AA9E;">						
+ 						<h4 th:text="'Ubah Data Jabatan'"></h4>
+						</div>
+						<form th:action="@{/jabatan/ubah/submit}" th:object="${jabatan}" method="POST">
+						<table class="table table-striped">
+							
+							<tr>
+								<td>
+								</td>
+								<td>
+								<input type="hidden" th:value="${jabatan.id}" name="id"></input>
+								
+								</td>
+
+							</tr>
+							<tr>
+								<td>
+Nama								
+								</td>
+								<td>
+											<input type="text" th:value="${jabatan.nama}" name="nama" class="form-control" id="nama" />
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+Deskripsi								
+								</td>
+								<td>
+									<input type="text" th:value="${jabatan.deskripsi}" name="deskripsi" class="form-control" id="deskripsi" />
+								
+								</td>
+							</tr>
+							<tr>
+								<td>
+Gaji Pokok								
+								</td>
+								<td>
+									<input type="number" th:value="${jabatan.gajiPokok}" name="gajiPokok" class="form-control" id="gajiPokok" value="3500000"/>
+								
+								</td>
+							</tr>
+							<tr>
+							<td>
+							</td>
+							<td>
+								<button type="submit" class="btn btn-primary mb-2">Simpan</button>
+							
+							</td>
+							
+							</tr>
+						</table>
+																					
+							
+			
+							
+						</form>
+						
+					</div>
+				</div>
+				</div>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
+
+
+

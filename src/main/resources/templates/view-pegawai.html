@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	
+	<title>Data Pegawai</title>
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	
+	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+
+</head>
+
+<body>
+
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+
+		<br>
+		<div class="container-fluid">
+
+<!-- 		<h5>Profil Pegawai</h5>
+ -->		
+				<div class="row">
+				<div class="col-md-6">
+					<div class="card">
+					    <div class="card-header text-white" style="background-color: #00AA9E;">						
+ 						<h4 th:text="'Profil Pegawai'"></h4>
+						</div>
+						
+						<table class="table table-striped">
+							<tr>
+								<td>Nama</td>
+								<td th:text="':   ' +  ${pegawai.nama}"></td>
+							</tr>
+							<tr>
+								<td>NIP</td>
+								<td th:text="':   ' +  ${pegawai.nip}"></td>
+							</tr>
+							<tr>
+								<td>Tempat Lahir</td>
+								<td th:text="':   ' +  ${pegawai.tempatLahir}"></td>
+							</tr>
+							 
+							<tr>
+								<td>Tanggal Lahir</td>
+								<td th:text="':   ' +  ${pegawai.tanggalLahir}"></td>
+							</tr>
+							<tr>
+								<td>Tahun Masuk</td>
+								<td th:text="':   ' +  ${pegawai.tahunMasuk}"></td>
+							</tr>
+							<tr>
+								<td>Instansi</td>
+								<td th:text="':   ' +  ${pegawai.instansi.nama}"></td>
+
+							</tr>
+						<!-- 	<tr>
+								<td>Nama Instansi</td>
+ 								<td th:text="${pegawai.instansi.nama} + ' - ' + ${pegawai.instansi.provinsi.nama}"></td>
+ 							</tr>	 -->					 
+						</table>
+						
+						
+					</div>
+				</div>
+				</div>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
+
+
+
