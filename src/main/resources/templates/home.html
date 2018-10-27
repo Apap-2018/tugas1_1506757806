@@ -19,20 +19,20 @@
 
 		<br>
 		<div class="container-fluid">
-			<h3>Sistem Informasi Kepegawaian</h3>
-			<h6>Selamat datang di Sistem Informasi Kepegawaian (SIKepeg) Next Generation</h6>
+			<h3>Daftar Pasien</h3>
+			<h6>Selamat datang di Sistem Informasi RS UNI Next Generation</h6>
 		<hr>
-		<h5>Lihat Data Pegawai Berdasarkan NIP</h5>
+		<h5>Lihat Data Pasien Berdasarkan NIP</h5>
 		
 				<div class="row">
 					<div class="col-md-6">
 						<div class="card">
 						    <div class="card-header text-white" style="background-color: #00AA9E;">						
-							<a>Masukan NIP (Nomor Identitas Pegawai) di bawah ini</a>
+							<a>Masukan NIK (Nomor Induk Kependudukan) di bawah ini</a>
 							</div>
 							<form th:action="@{/pegawai}" method="GET">
 								<div class="card-body">
-									<label for="dealerId">No Pegawai : </label>
+									<label for="dealerId">No NIK : </label>
 									<input type="text" name="nip" class="form-control" />
 									<br>
 									<button type="submit" class="btn btn-info">Cari</button>
@@ -44,12 +44,12 @@
 					<div class="col-md-6">
 					<div class="card">
 					    <div class="card-header text-white" style="background-color: #00AA9E;">						
-							Lihat Detail Jabatan
+							Lihat Detail Pasien
 						</div>
 						<form th:action="@{/jabatan/view}" method="GET">
 							<div class="card-body">
 							<br>
-								<label for="nip">Pilih Jabatan :</label>
+								<label for="nip">Pilih Pasien :</label>
 									<form th:action="@{/jabatan/view}" method = "GET">
 										<select name = "idJabatan">
 										<option th:each = "jabatan : ${daftarJabatan}" th:value = "${jabatan.id}" th:text = "${jabatan.nama}"></option>
