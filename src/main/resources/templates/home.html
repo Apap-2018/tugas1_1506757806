@@ -11,6 +11,7 @@
 	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
 	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
 
+
 </head>
 
 <body>
@@ -19,10 +20,10 @@
 
 		<br>
 		<div class="container-fluid">
-			<h3>Daftar Pasien</h3>
-			<h6>Selamat datang di Sistem Informasi RS UNI Next Generation</h6>
+			<h3>Sistem Informasi Kepegawaian</h3>
+			<h6>Selamat datang di Sistem Informasi Kepegawaian Next Generation v3.2</h6>
 		<hr>
-		<h5>Lihat Data Pasien Berdasarkan NIP</h5>
+		<h5>Lihat Data Pegawai Berdasarkan NIK</h5>
 		
 				<div class="row">
 					<div class="col-md-6">
@@ -44,23 +45,25 @@
 					<div class="col-md-6">
 					<div class="card">
 					    <div class="card-header text-white" style="background-color: #00AA9E;">						
-							Lihat Detail Pasien
+							Lihat Detail Pegawai
 						</div>
 						<form th:action="@{/jabatan/view}" method="GET">
 							<div class="card-body">
 							<br>
-								<label for="nip">Pilih Pasien :</label>
+								<label for="nip">Pilih Jabatan :</label>
 									<form th:action="@{/jabatan/view}" method = "GET">
 										<select name = "idJabatan">
 										<option th:each = "jabatan : ${daftarJabatan}" th:value = "${jabatan.id}" th:text = "${jabatan.nama}"></option>
 										</select>
 										<br>
 										<br>
-										<button type = "cari" class = "btn btn-info">Submit</button>
+										<button type = "cari" class = "btn btn-info">LIHAT</button>
 									</form>
 								<p></p>
 							</div>
 						</form>
+						
+						
 					</div>
 					</div>
 			

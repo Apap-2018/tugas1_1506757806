@@ -37,15 +37,6 @@ public class InstansiModel implements Serializable {
 	@JsonIgnore
 	private ProvinsiModel provinsi;	
 	
-/*	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "provinsi", referencedColumnName = "id", nullable = "false")
-	@Size(max = 20)
-	@OnDelete(action = OnDeleteAction.NO_ACTION)
-	@JsonIgnore
-	private ProvinsiModel provinsi;*/
-	
-/*	@OneToMany(mappedBy = "instansi",fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-*/
 	public ProvinsiModel getProvinsi() {
 		return provinsi;
 	}

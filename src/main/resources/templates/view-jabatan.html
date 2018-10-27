@@ -44,17 +44,7 @@
 								<td>Gaji Pokok</td>
 								<td th:text="':   ' +  ${jabatan.gajiPokok}"></td>
 							</tr>
-							<tr>
-								<td>
-								</td>
-								<td>
-								<form th:action="@{/jabatan/ubah}" class="form-inline" method="GET">
-									<input type="hidden" th:value="${jabatan.id}" name="idJabatan"></input>
-									<button class="btn btn-info" type="submit">UPDATE</button>
-								</form>
-								</td>
-							</tr>	 
-											 
+									 
 						</table>
 						
 						
@@ -62,14 +52,31 @@
 						
 					</div>
 				</div>
+
 				</div>
-			
+					<table>
+						<tr>
+						<td>
+						<form th:action="@{/jabatan/ubah}" class="form-inline" method="GET">
+									<input type="hidden" th:value="${jabatan.id}" name="idJabatan"></input>
+									<button class="btn btn-info" type="submit">UPDATE</button>
+								</form>
+						</td>
+						<td>
+						<form th:action="@{/jabatan/hapus}" class="form-inline" method="GET">
+									<input type="hidden" th:value="${jabatan.id}" name="idJabatan"></input>
+									<button class="btn btn-danger" type="submit">DELETE</button>
+								</form>
+						</td>
+						</tr>
+					
+					</table>				
 										
 									</div>
 		
 		
 		
-		
+	
 		
 		
 	</body>

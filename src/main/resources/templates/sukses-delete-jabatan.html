@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	
+	<title>Home</title>
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	
+	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+
+</head>
+
+<body>
+
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+
+		<br>
+		<div class="container-fluid">
+			<h3>Sistem Informasi Pasien</h3>
+			<h6>Selamat datang di Sistem Informasi Pasien (SIPas) Next Generation</h6>
+		<hr>
+		<h5></h5>
+		
+				<div class="row">
+				<div class="col-md-6">
+					<div class="card">
+					    <div class="card-header text-white" style="background-color: orange;">						
+						<a>Anda sukses menghapus jabatan !!!</a>
+						</div>
+						
+					</div>
+				</div>
+				</div>
+			
+		</div>
+		
+		
+		
+		
+		
+		
+	</body>
+</html>
+
+
+

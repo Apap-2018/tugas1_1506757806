@@ -8,9 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * PegawaiServiceImpl
- */
+
 @Service
 @Transactional
 public class PegawaiServiceImpl implements PegawaiService {
@@ -18,10 +16,6 @@ public class PegawaiServiceImpl implements PegawaiService {
 	@Autowired
 	private PegawaiDb pegawaiDb;
 	
-/*	@Override
-	public Optional<PegawaiModel> getPegawaiByNip(String nip) {
-		return pegawaiDb.findAll(nip);
-	}*/
 
 	@Override
 	public PegawaiModel getPegawaiDb() {
@@ -29,13 +23,6 @@ public class PegawaiServiceImpl implements PegawaiService {
 		return null;
 	}
 	
-
-/*	@Override
-	public void addPegawai(PegawaiModel pegawai) {
-		pegawaidb.save(pegawai);
-		
-	}
-*/
 	@Override
 	public Optional<PegawaiModel> getPegawaiByNip(String nip) {	
 		return pegawaiDb.findByNip(nip);

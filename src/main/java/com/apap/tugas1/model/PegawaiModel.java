@@ -2,6 +2,8 @@ package com.apap.tugas1.model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -103,6 +105,15 @@ public class PegawaiModel implements Serializable {
 
 	public void setInstansi(InstansiModel instansi) {
 		this.instansi = instansi;
+	}
+
+	@ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	@JoinTable(name = "jabatan_pegawai", joinColumns = { @JoinColumn(name = "id_pegawai") }, 
+				inverseJoinColumns = { @JoinColumn(name = "id_jabatan") })
+    private List<JabatanModel> jabatanList;
+	
+	public List<JabatanModel> getJabatanPegawaiList() {
+		return jabatanList;
 	}
 	
 	/*setter getter */

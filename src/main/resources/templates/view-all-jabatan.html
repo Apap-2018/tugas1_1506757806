@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	
+	<title>Data Pegawai</title>
+	
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	
+	<script type="text/javascript" th:src="@{/js/datatables.min.js}"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.8/css/jquery.dataTables.min.css">
+	
+	<object th:include="fragments/fragment :: css" th:remove="tag"></object>
+	<object th:include="fragments/fragment :: js" th:remove="tag"></object>
+
+	
+
+</head>
+
+<body>
+	<script>
+		$(document).ready(function(){
+			$('#tabel-data').DataTable({
+				lengthChange:false
+			});
+		});
+	
+	</script>
+		<nav th:replace="fragments/fragment :: navbar"></nav>
+
+		<br>
+		<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-10">
+						<div class="card">
+						    <div class="card-header text-white" style="background-color: #00AA9E;">						
+	 						<h4 th:text="'Daftar Semua Jabatan'"></h4>
+							</div>				
+	
+							<table id="tabel-data" class="table table-bordered table-striped">
+							  <thead>
+							  	<tr>
+							    	<th>Nama</th>
+							    	<th>Deskripsi</th>
+							    	<th>Gaji pokok</th>
+							    	<th>Ubah</th>
+							  	</tr>
+							  </thead>
+							  <tbody>
+							  	<tr th:each="jabatan : ${listJabatan}">
+							   		<td th:text="${jabatan.nama}"></td>
+							  	 	<td th:text="${jabatan.deskripsi}"></td>
+							    	<td th:text="${jabatan.gajiPokok}">id</td>
+							    	<td>
+							    	<form th:action="@{/jabatan/ubah}" class="form-inline" method="GET">
+									<input type="hidden" th:value="${jabatan.id}" name="idJabatan"></input>
+									<button class="btn btn-info" type="submit">UPDATE</button>
+									</form>
+							    	</td>
+							  	</tr>
+							  </tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>						
+		</div>		
+	</body>
+</html>
+
+
+
